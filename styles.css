@@ -1,42 +1,29 @@
 :root {
-    /* Dark theme (default) */
+    /* 主題變量 */
     --primary: var(--dark-primary);
     --secondary: var(--dark-secondary);
     --background: var(--dark-background);
     --text: var(--dark-text);
     --text-secondary: var(--dark-text-secondary);
     --card-bg: var(--dark-card-bg);
-    --border-color: var(--dark-border-color);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
 
-    /* Dark theme colors */
+    /* 深色主題顏色 */
     --dark-primary: #64ffda;
     --dark-secondary: #7f5af0;
     --dark-background: #0f172a;
-    --dark-text: #ecf0f3;
+    --dark-text: #e2e8f0;
     --dark-text-secondary: #94a3b8;
     --dark-card-bg: rgba(30, 41, 59, 0.7);
-    --dark-border-color: rgba(255, 255, 255, 0.1);
 
-    /* Light theme colors */
+    /* 淺色主題顏色 */
     --light-primary: #0ea5e9;
     --light-secondary: #6366f1;
     --light-background: #f1f5f9;
     --light-text: #1e293b;
-    --light-text-secondary: #334155;
+    --light-text-secondary: #475569;
     --light-card-bg: rgba(255, 255, 255, 0.7);
-    --light-border-color: rgba(0, 0, 0, 0.1);
-
-    /* Default to Dark Mode */
-    --primary-light: var(--dark-primary-light);
-    --secondary-light: var(--dark-secondary-light);
-    --background-light: var(--dark-background-light);
-    --accent: var(--dark-accent);
-
-    --primary-color: #4a90e2;
-    --secondary-color: #2c3e50;
-    --background-color: #f5f5f5;
-    --text-color: #333;
-    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 :root[data-theme="light"] {
@@ -46,20 +33,22 @@
     --text: var(--light-text);
     --text-secondary: var(--light-text-secondary);
     --card-bg: var(--light-card-bg);
-    --border-color: var(--light-border-color);
+    --border-color: rgba(0, 0, 0, 0.1);
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 :root[data-theme="dark"] {
-    --primary-color: #64b5f6;
-    --secondary-color: #90caf9;
-    --background-color: #1a1a1a;
-    --text-color: #ffffff;
-    --card-bg: rgba(30, 30, 30, 0.9);
+    --primary: var(--dark-primary);
+    --secondary: var(--dark-secondary);
+    --background: var(--dark-background);
+    --text: var(--dark-text);
+    --text-secondary: var(--dark-text-secondary);
+    --card-bg: var(--dark-card-bg);
+    --border-color: rgba(255, 255, 255, 0.1);
     --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Light theme class */
+/* Light theme class - for legacy support */
 body.light-theme {
     --primary: var(--light-primary);
     --secondary: var(--light-secondary);
@@ -67,6 +56,8 @@ body.light-theme {
     --text: var(--light-text);
     --text-secondary: var(--light-text-secondary);
     --card-bg: var(--light-card-bg);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -78,11 +69,11 @@ body.light-theme {
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 20px;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--background);
+    color: var(--text);
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -125,24 +116,28 @@ body {
     pointer-events: none;
 }
 
+[data-theme="light"] .tech-background {
+    background: linear-gradient(120deg, rgba(240, 249, 255, 0.7) 0%, rgba(224, 242, 254, 0.7) 100%);
+}
+
 .tech-particle {
     display: none;
 }
 
 .profile-card {
     position: relative;
-    width: 400px;
+    width: 500px;
     background: var(--card-bg);
     border-radius: 30px;
     padding: 2px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px var(--shadow-color);
     overflow: hidden;
     margin: 0 auto;
     color: var(--text-color);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
 }
 
 .profile-card.visible {
@@ -156,14 +151,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
     opacity: 0.3;
     z-index: -1;
 }
 
 .card-content {
     position: relative;
-    padding: 30px;
+    padding: 40px;
     background: transparent;
     border-radius: 28px;
 }
@@ -186,8 +181,8 @@ body {
 
 .tech-circle-container {
     position: relative;
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     margin-bottom: 25px;
 }
 
@@ -219,7 +214,7 @@ body {
     left: 10%;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--primary-color);
+    border: 3px solid var(--primary);
     box-shadow: 0 0 30px rgba(10, 132, 255, 0.3);
 }
 
@@ -230,10 +225,10 @@ body {
 }
 
 .name {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: 700;
     margin: 0 0 10px 0;
-    background: linear-gradient(135deg, var(--text-color) 0%, rgba(255, 255, 255, 0.8) 100%);
+    background: linear-gradient(135deg, var(--text) 0%, var(--text-secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.5px;
@@ -242,7 +237,7 @@ body {
 
 .divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
     margin: 20px 0;
     opacity: 0.3;
 }
@@ -250,7 +245,7 @@ body {
 .bio {
     font-size: 1.1em;
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--text-secondary);
     margin: 20px 0;
     font-weight: 400;
     letter-spacing: 0.2px;
@@ -260,9 +255,9 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 25px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.05);
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     margin: 30px 0;
@@ -277,15 +272,15 @@ body {
 
 .tech-stats .stat i {
     font-size: 1.8em;
-    color: var(--primary-color);
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .tech-stats .stat span {
     font-size: 0.95em;
-    color: var(--text-color);
+    color: var(--text);
     font-weight: 500;
 }
 
@@ -298,7 +293,7 @@ body {
 
 .line {
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
     animation: pulse 2s ease-in-out infinite;
     box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
 }
@@ -326,7 +321,7 @@ body {
 
 .typing-text {
     font-size: 1.1em;
-    color: #ccc;
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
@@ -340,7 +335,7 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--primary-color);
+    background: var(--primary);
     animation: blink 1.5s infinite;
     box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
 }
@@ -368,12 +363,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    color: var(--text);
     text-decoration: none;
     font-size: 1.5em;
     transition: all 0.3s ease;
@@ -382,7 +377,7 @@ body {
 }
 
 .social-link:hover {
-    background: var(--primary-color);
+    background: var(--primary);
     color: white;
     transform: translateY(-3px);
 }
@@ -394,7 +389,7 @@ body {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--primary);
     transition: width 0.3s ease;
     box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
 }
@@ -437,11 +432,11 @@ body {
     }
     
     .card-content {
-        padding: 20px;
+        padding: 30px;
     }
     
     .name {
-        font-size: 1.8em;
+        font-size: 2em;
     }
     
     .tech-stats {
@@ -480,7 +475,7 @@ body {
 .skill-icon {
     font-size: 2em;
     margin-bottom: 10px;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .skill-progress {
@@ -498,7 +493,7 @@ body {
 
 .progress-bar {
     height: 100%;
-    background: var(--primary-color);
+    background: var(--primary);
     border-radius: 5px;
     transition: width 1s ease-in-out;
     position: relative;
@@ -520,7 +515,7 @@ body {
     left: 0;
     top: -25px;
     font-size: 0.9em;
-    color: var(--text-color);
+    color: var(--text);
     z-index: 2;
 }
 
@@ -529,7 +524,7 @@ body {
     right: 0;
     top: -25px;
     font-size: 0.9em;
-    color: var(--primary-color);
+    color: var(--primary);
     z-index: 2;
 }
 
@@ -573,7 +568,7 @@ body {
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
 }
 
 .projects-carousel {
@@ -639,7 +634,7 @@ body {
 }
 
 .tag {
-    background: var(--primary-color);
+    background: var(--primary);
     color: white;
     padding: 2px 8px;
     border-radius: 3px;
@@ -654,14 +649,14 @@ body {
 }
 
 .timeline-date {
-    color: var(--primary-color);
+    color: var(--primary);
     font-weight: bold;
 }
 
 .timeline-dot {
     width: 10px;
     height: 10px;
-    background: var(--primary-color);
+    background: var(--primary);
     border-radius: 50%;
     position: relative;
 }
@@ -671,7 +666,7 @@ body {
     position: absolute;
     width: 20px;
     height: 20px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--primary);
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
@@ -691,14 +686,14 @@ body {
 
 .stat i {
     font-size: 1.8em;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .stat span {
     font-size: 0.95em;
-    color: var(--text-color);
+    color: var(--text);
     font-weight: 500;
 }
 
@@ -722,17 +717,18 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: var(--card-bg);
+    background-color: var(--card-bg);
     border: none;
     border-radius: 50%;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px var(--shadow-color);
     transition: transform 0.3s, background-color 0.3s;
+    z-index: 1000;
 }
 
 .theme-toggle:hover {
@@ -740,6 +736,6 @@ body {
 }
 
 .theme-toggle i {
-    color: var(--text-color);
+    color: var(--text);
     font-size: 1.2rem;
 }
