@@ -1,32 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional AI/Data Science Developer</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+    <canvas id="geometryBackground"></canvas>
     <div class="container">
         <div class="tech-background"></div>
         <div class="content">
             <div class="profile-card">
-                <div class="profile-image">
-                    <img src="assets/profile.jpg" alt="Profile Picture">
-                    <div class="tech-circle"></div>
-                </div>
-                <h1 class="name">Jacky Hui Ka Ming</h1>
-                <h2 class="title">AI/Data Science Developer</h2>
-                <p class="bio">Passionate about building intelligent systems and extracting insights from data</p>
-                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/kamingh/" target="_blank" class="social-link linkedin">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Megapotatosan" target="_blank" class="social-link github">
-                        <i class="fab fa-github"></i>
-                    </a>
+                <div class="card-border"></div>
+                <div class="card-content">
+                    <div class="profile-header">
+                        <div class="header-left">
+                            <div class="tech-circle-container">
+                                <div class="tech-circle"></div>
+                                <div class="tech-circle-inner"></div>
+                                <div class="profile-image">
+                                    <img src="assets/profile.jpg" alt="Profile Picture">
+                                </div>
+                            </div>
+                            <h1 class="name">Jacky Hui Ka Ming</h1>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-info">
+                        <div class="title-container">
+                            <h2 class="title"><span class="typing-text"></span></h2>
+                            <div class="tech-indicator">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="divider"></div>
+                    
+                    <p class="bio">Passionate about building intelligent systems and extracting insights from data</p>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="tech-stats">
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>5+ Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>20+ Projects</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-brain"></i>
+                            <span>AI/ML Specialist</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <div class="link-container">
+                            <a href="https://www.linkedin.com/in/kamingh/" target="_blank" class="social-link linkedin">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <div class="link-line"></div>
+                        </div>
+                        <div class="link-container">
+                            <a href="https://github.com/Megapotatosan" target="_blank" class="social-link github">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <div class="link-line"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
