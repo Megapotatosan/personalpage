@@ -1,3 +1,6 @@
+// 這是一個預留的腳本文件
+// 如果需要重新添加功能，請參考之前的變更
+
 document.addEventListener('DOMContentLoaded', () => {
     // Setup interactive geometry background
     setupGeometryBackground();
