@@ -3,85 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional AI/Data Science Developer</title>
+    <title>Jacky Hui — AI/Data Science Developer</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <button class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-moon"></i>
-    </button>
-    <canvas id="geometryBackground"></canvas>
-    <div class="container">
-        <div class="tech-background"></div>
-        <div class="content">
-            <div class="profile-card">
-                <div class="card-border"></div>
-                <div class="card-content">
-                    <div class="profile-header">
-                        <div class="header-left">
-                            <div class="tech-circle-container">
-                                <div class="tech-circle"></div>
-                                <div class="tech-circle-inner"></div>
-                                <div class="profile-image">
-                                    <img src="assets/profile.jpg" alt="Profile Picture">
-                                </div>
-                            </div>
-                            <h1 class="name">Jacky Hui Ka Ming</h1>
-                        </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <span class="nav-logo">JH</span>
+        <div class="nav-right">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Aurora background blobs -->
+    <div class="aurora" aria-hidden="true">
+        <div class="aurora-blob aurora-1"></div>
+        <div class="aurora-blob aurora-2"></div>
+        <div class="aurora-blob aurora-3"></div>
+    </div>
+
+    <!-- Noise texture overlay -->
+    <div class="noise" aria-hidden="true"></div>
+
+    <main>
+
+        <!-- Hero -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    Available for opportunities
+                </div>
+                <h1 class="hero-name">
+                    <span>Jacky</span>
+                    <span class="name-accent">Hui Ka Ming</span>
+                </h1>
+                <p class="hero-role">
+                    <span class="role-prefix">I build&nbsp;</span>
+                    <span class="typing-text"></span><span class="cursor">|</span>
+                </p>
+                <p class="hero-bio">Passionate about building intelligent systems and extracting insights from data. 5+ years crafting AI/ML solutions that matter.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get in touch</a>
+                    <a href="https://github.com/Megapotatosan" target="_blank" class="btn btn-ghost">
+                        <i class="fab fa-github"></i>&nbsp;GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-ring"></div>
+                <img src="assets/profile.jpg" alt="Jacky Hui Ka Ming">
+            </div>
+        </section>
+
+        <!-- Bento grid — About -->
+        <section id="about" class="bento-grid fade-in">
+            <div class="bento-card bento-stat">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="bento-card bento-stat">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Projects Shipped</span>
+            </div>
+            <div class="bento-card bento-stat">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Ideas Brewing</span>
+            </div>
+            <div class="bento-card bento-bio">
+                <i class="fas fa-brain bento-icon"></i>
+                <h3>AI / ML Specialist</h3>
+                <p>Deep expertise in machine learning pipelines, neural networks, and data engineering. Building the future one model at a time.</p>
+            </div>
+            <div class="bento-card bento-links">
+                <a href="https://www.linkedin.com/in/kamingh/" target="_blank" class="social-pill linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Megapotatosan" target="_blank" class="social-pill github">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="skills-section fade-in">
+            <p class="section-label">Skills &amp; Tools</p>
+            <div class="skills-groups">
+                <div class="skills-group">
+                    <span class="group-label">ML / AI</span>
+                    <div class="tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">HuggingFace</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">OpenCV</span>
                     </div>
-                    
-                    <div class="profile-info">
-                        <div class="title-container">
-                            <h2 class="title"><span class="typing-text"></span></h2>
-                            <div class="tech-indicator">
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                        </div>
+                </div>
+                <div class="skills-group">
+                    <span class="group-label">Data</span>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">SQL</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Spark</span>
+                        <span class="tag">Airflow</span>
+                        <span class="tag">dbt</span>
                     </div>
-                    
-                    <div class="divider"></div>
-                    
-                    <p class="bio">Passionate about building intelligent systems and extracting insights from data</p>
-                    
-                    <div class="divider"></div>
-                    
-                    <div class="tech-stats">
-                        <div class="stat">
-                            <i class="fas fa-code"></i>
-                            <span>5+ Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>20+ Projects</span>
-                        </div>
-                        <div class="stat">
-                            <i class="fas fa-brain"></i>
-                            <span>AI/ML Specialist</span>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <div class="link-container">
-                            <a href="https://www.linkedin.com/in/kamingh/" target="_blank" class="social-link linkedin">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <div class="link-line"></div>
-                        </div>
-                        <div class="link-container">
-                            <a href="https://github.com/Megapotatosan" target="_blank" class="social-link github">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <div class="link-line"></div>
-                        </div>
+                </div>
+                <div class="skills-group">
+                    <span class="group-label">Cloud &amp; Infra</span>
+                    <div class="tags">
+                        <span class="tag">AWS</span>
+                        <span class="tag">GCP</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">MLflow</span>
+                        <span class="tag">FastAPI</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <!-- Contact / Footer -->
+        <footer id="contact" class="contact fade-in">
+            <h2 class="contact-title">Let's Connect</h2>
+            <p class="contact-sub">Open to collaborations, interesting problems, and new opportunities.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/kamingh/" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/Megapotatosan" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+            </div>
+            <p class="footer-note">Jacky Hui Ka Ming &middot; 2026</p>
+        </footer>
+
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>
