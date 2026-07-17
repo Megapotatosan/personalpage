@@ -520,7 +520,7 @@ main {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--text-muted);
-    min-width: 96px;
+    min-width: 180px;
     padding-top: 7px;
     flex-shrink: 0;
 }
